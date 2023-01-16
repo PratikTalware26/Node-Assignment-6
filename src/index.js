@@ -1,0 +1,17 @@
+const app = require('./app');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+
+
+dotenv.config();
+//connect to DB
+// mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true }, () => {
+//     console.log('connected to DB')
+// })
+mongoose.connect('mongodb://127.0.0.1:27017/Blog', () => {
+        console.log('connected to DB')})
+
+
+
+app.listen(3000, () => console.log('Server running......'));
+
